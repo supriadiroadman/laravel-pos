@@ -11,10 +11,18 @@
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('layouts.master');
 });
 
+// ke Controller CategoryController ke method index
 Route::resource('/kategori', 'CategoryController')->except([
     'create', 'show'
 ]);
+
+// ke Controller ProductController ke method index
+Route::resource('/produk', 'ProductController');

@@ -29,7 +29,7 @@ class CategoryController extends Controller
                 'description'=> $request->description
             ]);
             return redirect()->back()->with(['success'=>'Kategori: '. $categories->name .' Ditambahkan']);
-        } catch (\Exeception $e) {
+        } catch (\Exception  $e) {
             return redirect()->back()->with(['error'=> $e->getMessage()]);
         }
     }
