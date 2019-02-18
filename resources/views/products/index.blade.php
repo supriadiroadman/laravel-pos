@@ -94,6 +94,7 @@
                         </tbody>
                     </table>
                 </div>
+                <!-- Untuk Pagination -->
                 <div class="float-right">
                     {!! $products->links() !!}
                 </div>

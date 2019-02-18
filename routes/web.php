@@ -16,13 +16,21 @@
 // });
 
 Route::get('/', function () {
-    return view('layouts.master');
+    return redirect(route('login'));
 });
 
-// ke Controller CategoryController ke method index
-Route::resource('/kategori', 'CategoryController')->except([
-    'create', 'show'
-]);
+Auth::routes();
 
-// ke Controller ProductController ke method index
-Route::resource('/produk', 'ProductController');
+Route::group(['middleware' => ['auth']], function () {
+
+    // ke Controller CategoryController ke method index
+    Route::resource('/kategori', 'CategoryController')->except([
+    'create', 'show'
+    ]);
+
+    // ke Controller ProductController ke method index
+    Route::resource('/produk', 'ProductController');
+
+    Route::get('/home', 'HomeController@index')->name('home');
+
+});

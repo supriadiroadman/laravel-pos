@@ -43,9 +43,7 @@
                         <input type="hidden" name="_method" value="PUT">
                         <div class="form-group">
                             <label for="name">Kategori</label>
-                            <input type="text" 
-                            name="name"
-                            value="{{ $categories->name }}"
+                            <input type="text" name="name" value="{{ $categories->name }}"
                             class="form-control {{ $errors->has('name') ? 'is-invalid':'' }}" id="name" required>
                         </div>
                         <div class="form-group">
